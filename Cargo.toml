@@ -1,0 +1,14 @@
+[package]
+name = "approx"
+version = "0.1.0"
+authors = ["nathanfaucett <nathanfaucett@gmail.com>"]
+
+keywords = ["approx"]
+description = "approx trait for comparing floats"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/nathanfaucett/rs-approx.git"
+homepage = "https://github.com/nathanfaucett/rs-approx"
+
+[dependencies.abs]
+git = "https://github.com/nathanfaucett/rs-abs.git"
