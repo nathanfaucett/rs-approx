@@ -13,6 +13,7 @@ macro_rules! trait_approx {
         impl Approx for $t {
             #[inline(always)]
             fn approx_eq(self, other: Self) -> bool {self == other}
+            #[inline(always)]
             fn approx_ne(self, other: Self) -> bool {self != other}
         }
     );
@@ -31,19 +32,21 @@ trait_approx!(i32);
 trait_approx!(i64);
 
 impl Approx for f32 {
-    #[inline(always)]
+    #[inline]
     fn approx_eq(self, other: Self) -> bool {
         Abs::abs(self - other) < f32::EPSILON
     }
+    #[inline(always)]
     fn approx_ne(self, other: Self) -> bool {
         !self.approx_eq(other)
     }
 }
 impl Approx for f64 {
-    #[inline(always)]
+    #[inline]
     fn approx_eq(self, other: Self) -> bool {
         Abs::abs(self - other) < f64::EPSILON
     }
+    #[inline(always)]
     fn approx_ne(self, other: Self) -> bool {
         !self.approx_eq(other)
     }
