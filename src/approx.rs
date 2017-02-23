@@ -1,5 +1,6 @@
-use abs::Abs;
 use core::{f32, f64};
+
+use abs::Abs;
 
 
 pub trait Approx {
@@ -32,7 +33,7 @@ trait_approx!(i64);
 impl Approx for f32 {
     #[inline(always)]
     fn approx_eq(self, other: Self) -> bool {
-        (self - other).abs() < f32::EPSILON
+        Abs::abs(self - other) < f32::EPSILON
     }
     fn approx_ne(self, other: Self) -> bool {
         !self.approx_eq(other)
@@ -41,7 +42,7 @@ impl Approx for f32 {
 impl Approx for f64 {
     #[inline(always)]
     fn approx_eq(self, other: Self) -> bool {
-        (self - other).abs() < f64::EPSILON
+        Abs::abs(self - other) < f64::EPSILON
     }
     fn approx_ne(self, other: Self) -> bool {
         !self.approx_eq(other)
