@@ -2,9 +2,10 @@
 
 
 extern crate abs;
+extern crate zero;
 
 
-mod approx;
+mod approx_eq;
 
 
-pub use approx::Approx;
+pub use approx_eq::ApproxEq;

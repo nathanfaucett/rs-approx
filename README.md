@@ -1,4 +1,4 @@
-rs-approx
+rs-approx_eq
 =====
 
-approx trait for comparing floats
+approx_eq trait for comparing floats
