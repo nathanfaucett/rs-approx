@@ -11,5 +11,4 @@ repository = "https://github.com/nathanfaucett/rs-approx_eq.git"
 homepage = "https://github.com/nathanfaucett/rs-approx_eq"
 
 [dependencies]
-abs = { git = "https://github.com/nathanfaucett/rs-abs.git" }
 zero = { git = "https://github.com/nathanfaucett/rs-zero.git" }
