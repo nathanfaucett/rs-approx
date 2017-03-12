@@ -5,7 +5,7 @@ use zero::Zero;
 
 
 pub trait ApproxEq: Clone + PartialOrd + Zero + Sub<Self, Output=Self> {
-    #[inline]
+    #[inline(always)]
     fn approx_eq(&self, other: &Self) -> bool {
         self.approx_eq_tolerance(other, &Zero::zero())
     }
@@ -18,7 +18,7 @@ pub trait ApproxEq: Clone + PartialOrd + Zero + Sub<Self, Output=Self> {
     fn approx_eq_tolerance(&self, other: &Self, tolerance: &Self) -> bool {
         let a = self.clone();
         let b = other.clone();
-        
+
         if a > b {
             (a - b) < tolerance.clone()
         } else {
